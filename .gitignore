@@ -1,0 +1,23 @@
+README.html
+*.ok
+docker
+.idea*
+venv
+__pycache__
+*.log
+app/.project
+.vscode/
+
+# db
+db
+app/db
+
+migrations
+
+# Environments
+.env
+.venv
+venv/
+ENV/
+env.bak/
+venv.bak/
