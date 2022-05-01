@@ -34,10 +34,10 @@ def main():
             break
     
     if choose == 1:
-        os.chdir('../flask_auto_creator')
+        os.chdir('flask_auto_creator')
         os.system('python3 main.py')
     elif choose == 2:
-        os.chdir('../grpc_auto_creator')
+        os.chdir('grpc_auto_creator')
         os.system('python3 main.py')
 
 
