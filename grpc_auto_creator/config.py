@@ -151,7 +151,7 @@ class ClusterInfo(GrpcClient):
         return app_pb2_grpc.GRPCServiceStub(self.connection)
  
     def test(self):
-        '''получить список всех нод'''
+        '''тестовая функция'''
 
         try:
             return self.stub.Test(app_pb2.Request()).data

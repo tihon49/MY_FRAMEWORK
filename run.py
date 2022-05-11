@@ -1,7 +1,7 @@
 import os
 
 from config import MENU
-from utils import get_menu_numbers
+from utils import get_menu_numbers, create_flask_app, create_grpc_app
 
 
 
@@ -15,8 +15,8 @@ def drow_menu():
 
 
 def get_user_input():
-    from rich.prompt import Prompt
-    user_input = Prompt.ask(
+    from rich.prompt import IntPrompt
+    user_input = IntPrompt.ask(
         '--> ',
         choices=[str(i) for i in get_menu_numbers(MENU)]
     )
@@ -25,14 +25,13 @@ def get_user_input():
 
 def main():
     drow_menu()
+    choices_dict = {
+        1: create_flask_app,
+        2: create_grpc_app
+    }
     choose = get_user_input()
+    choices_dict.get(choose)()
 
-    if choose == '1':
-        os.chdir('flask_auto_creator')
-        os.system('python3 main.py')
-    elif choose == '2':
-        os.chdir('grpc_auto_creator')
-        os.system('python3 main.py')
 
 
 if __name__ == "__main__":
